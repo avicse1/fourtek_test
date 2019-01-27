@@ -11,6 +11,7 @@ Route::get('/verify-email', 'AuthController@do_verify')->name('do_verify');
 
 Route::group(['middleware' => ['web', 'login.check']], function(){
     Route::get('/dashboard', 'DashboardController@dashboard')->name('dashboard');
+    Route::post('/mark-attendance', 'DashboardController@markAttendance')->name('mark_attendance');
 });
 
 Route::group(['prefix' => 'admin'], function(){
