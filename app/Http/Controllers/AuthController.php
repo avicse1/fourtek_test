@@ -25,7 +25,7 @@ class AuthController extends Controller
         $user = User::where('email', $request->email)->first();
 
         if(!$user){
-            $message_bag->add('email', 'Incorrect Email');
+            $message_bag->add('email', 'No such email found in our database.');
             return redirect()->route('login')->withErrors($message_bag);
         }
 

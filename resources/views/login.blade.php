@@ -10,10 +10,16 @@
                     <div class="form-group">
                         <label for="email">Email address</label>
                         <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address" value="{{old('email')}}">
+                        @if($errors->has('email'))
+                            <p class="help-block has-error">{{$errors->first('email')}}</p>
+                        @endif
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
                         <input type="password" class="form-control" id="password" name="password" placeholder="Enter password">
+                        @if($errors->has('password'))
+                            <p class="help-block has-error">{{$errors->first('password')}}</p>
+                        @endif
                     </div>
                     <button id="login" type="button" class="btn btn-primary btn-block">Login</button>
                     <div>
