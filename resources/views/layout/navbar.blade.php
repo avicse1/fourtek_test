@@ -7,7 +7,7 @@
         <ul class="navbar-nav mr-auto">
             <li class="nav-item dropdown active">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Welcome, Avinash
+                Welcome, {{Helper::getCurrentUser()->first_name.' '.Helper::getCurrentUser()->last_name }}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{{route('logout')}}">Logout</a>
