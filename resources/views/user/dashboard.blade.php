@@ -24,7 +24,7 @@
                     <tr>
                         <td>{{$i++}}</td>
                         <td>{{$attend->date}}</td>
-                        <td>{{$attend->time}}</td>
+                        <td>{{$attend->pivot->in_time}}</td>
                     </tr>
                     @endforeach
                     
@@ -72,10 +72,10 @@
             $('#my_attendance').DataTable();
 
             $('#date').datetimepicker({
-                format : 'DD-MM-YYYY',
+                format : 'YYYY-MM-DD',
             });
             $('#time').datetimepicker({                      
-                format: 'hh:mm A',
+                format: 'HH:mm',
             });
         });
     </script>

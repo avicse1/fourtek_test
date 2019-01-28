@@ -18,6 +18,7 @@ Route::group(['prefix' => 'admin'], function(){
     Route::get('/', 'AdminAuthController@login')->name('admin_login');
     Route::post('/do-login', 'AdminAuthController@do_login')->name('do_admin_login');
 });
-Route::group(['prefix' => 'admin', 'middleware' => ['web', 'login.check']], function(){
+Route::group(['prefix' => 'admin', 'middleware' => ['web', 'login.check', 'admin.check']], function(){
     Route::get('/dashboard', 'AdminDashboardController@dashboard')->name('admin_dashboard');
+    Route::post('/dashboard', 'AdminDashboardController@filterAttendance')->name('filter_attendance');
 });
